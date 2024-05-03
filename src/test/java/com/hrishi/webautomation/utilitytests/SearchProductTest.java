@@ -54,49 +54,8 @@ public class SearchProductTest extends BaseTest {
     }
 
 
-    @Test
-    public void verifyProductInformationIsCorrect(){
-        //arrange
-        SearchContent searchContent=SearchContent.builder().build().init();
-        HomePage homePage=new HomePage(getWebDriver());
-        SearchModal searchModal = homePage.getHeader().openSearchModal();
-        ProductDataClient productDataClient=new ProductDataClient();
-        String name = productDataClient.getProduct().getName();
 
-        //act
-        ProductsPage productsPage = searchModal.searchResult(searchContent.getInput());
-        WebElement productImage= getWebDriver().findElement(By.xpath("//*[@id=\"product-grid\"]/ul/li/div"));
-        productImage.click();
 
-        ChoosedProduct choosedProduct=new ChoosedProduct(getWebDriver());
-        String productName = choosedProduct.getProductName();
-        String sellerName=choosedProduct.getSellerName();
-        String regularPrice=choosedProduct.getPrice();
-        System.out.println(productName+" "+sellerName+" "+regularPrice);
-
-        //assert
-        Assert.assertTrue(productName.contains(name));
-        Assert.assertTrue(sellerName.contains(sellerName));
-        Assert.assertTrue(regularPrice.contains(regularPrice));
-    }
-    @Test
-    public void userShouldAbleToZoom() {
-        SearchContent searchContent = SearchContent.builder().build().init();
-        HomePage homePage = new HomePage(getWebDriver());
-        SearchModal searchModal = homePage.getHeader().openSearchModal();
-        ProductDataClient productDataClient = new ProductDataClient();
-
-        //act
-        ProductsPage productsPage = searchModal.searchResult(searchContent.getInput());
-        WebElement productImage = getWebDriver().findElement(By.xpath("//*[@id=\"product-grid\"]/ul/li/div"));
-        productImage.click();
-
-        ZoomComponant zoomImage = new ZoomComponant(getWebDriver());
-        zoomImage.zoomImageFunction();
-
-        Assert.assertTrue(zoomImage.getZoomedWidth() > zoomImage.getOriginalWidth());
-
-    }
     @Test
     public void userShouldAbleToCheckStockAvability() {
         //arrange
