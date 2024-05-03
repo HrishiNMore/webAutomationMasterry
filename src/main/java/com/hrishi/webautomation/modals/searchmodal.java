@@ -1,14 +1,15 @@
-package com.hrishi.webautomation.components;
+package com.hrishi.webautomation.modals;
 
+import com.hrishi.webautomation.components.HeaderComponent;
 import com.hrishi.webautomation.pages.SProductsPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class SearchModal extends HeaderComponent{
+public class searchmodal extends HeaderComponent {
     @FindBy(id = "Search-In-Modal")
     private WebElement inputBoxEle;
-    public SearchModal(WebDriver webDriver) {
+    public searchmodal(WebDriver webDriver) {
         super(webDriver);
     }
 
@@ -17,5 +18,4 @@ public class SearchModal extends HeaderComponent{
         inputBoxEle.submit();
         return new SProductsPage(webDriver);
     }
-
 }

@@ -2,21 +2,15 @@ package com.hrishi.webautomation.utilitytests;
 
 import com.hrishi.webautomation.BaseTest;
 import com.hrishi.webautomation.actions.SearchContent;
-import com.hrishi.webautomation.actions.WebActions;
 import com.hrishi.webautomation.components.HeaderComponent;
 import com.hrishi.webautomation.components.SearchModal;
-import com.hrishi.webautomation.components.ZoomComponant;
-import com.hrishi.webautomation.data.clientdata.ProductDataClient;
-import com.hrishi.webautomation.models.ChoosedProduct;
 import com.hrishi.webautomation.models.User;
 import com.hrishi.webautomation.pages.*;
-import com.hrishi.webautomation.pages.accounts.LoginPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class SearchProductTest extends BaseTest {
@@ -28,7 +22,7 @@ public class SearchProductTest extends BaseTest {
 
         //arrange
         SearchModal searchModal = homePage.getHeader().openSearchModal();
-        ProductsPage productsPage = searchModal.searchResult(searchContent.getInput());
+        SProductsPage productsPage = searchModal.searchResult(searchContent.getInput());
 
         //assert
         Assert.assertTrue(productsPage.getHeading().contains("Search results"));
@@ -42,7 +36,7 @@ public class SearchProductTest extends BaseTest {
 
         //arrange
         SearchModal searchModal = homePage.getHeader().openSearchModal();
-        ProductsPage productsPage = searchModal.searchResult(searchContent.getInput());
+        SProductsPage productsPage = searchModal.searchResult(searchContent.getInput());
 
         //assert
         List<String> productNames = productsPage.getProductNames();
@@ -73,13 +67,13 @@ public class SearchProductTest extends BaseTest {
         SearchContent searchContent = SearchContent.builder().build().init();
         HomePage homePage = new HomePage(getWebDriver());
         SearchModal searchModal = homePage.getHeader().openSearchModal();
-        ProductsPage productsPage = searchModal.searchResult(searchContent.getInput());
+        SProductsPage productsPage = searchModal.searchResult(searchContent.getInput());
 
-        SerchPage serchPage=homePage.getHeader().navTopicture();
+        ProductPage serchPage=homePage.getHeader().navTopicture();
 
-        SerchPage addCart=homePage.getHeader().navToAddCart();
+        ProductPage addCart=homePage.getHeader().navToAddCart();
 
-        SerchPage viewCart=homePage.getHeader().navToViewCart();
+        ProductPage viewCart=homePage.getHeader().navToViewCart();
 
         HeaderComponent headerComponent=new HeaderComponent(getWebDriver());
         String a=headerComponent.navToTextCart();

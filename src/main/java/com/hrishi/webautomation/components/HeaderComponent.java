@@ -95,18 +95,18 @@ public class HeaderComponent extends BasePage {
         return new CartPage(webDriver);
     }
 
-    public SerchPage navTopicture(){
+    public ProductPage navTopicture(){
         buttonActions.click(picture);
-        return new SerchPage(webDriver);
+        return new ProductPage(webDriver);
     }
-    public SerchPage navToAddCart(){
+    public ProductPage navToAddCart(){
         buttonActions.click(addToCartEle);
-        return new SerchPage(webDriver);
+        return new ProductPage(webDriver);
     }
 
-    public SerchPage navToViewCart(){
+    public ProductPage navToViewCart(){
         buttonActions.click(viewMyCart);
-        return new SerchPage(webDriver);
+        return new ProductPage(webDriver);
     }
     public String navToTextCart(){
         return  webActions.getText(cartTextEle);

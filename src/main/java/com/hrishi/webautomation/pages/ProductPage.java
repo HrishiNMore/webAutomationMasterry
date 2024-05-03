@@ -2,8 +2,8 @@ package com.hrishi.webautomation.pages;
 
 import org.openqa.selenium.WebDriver;
 
-public class SerchPage extends BasePage{
-    public SerchPage(WebDriver webDriver) {
+public class ProductPage extends BasePage{
+    public ProductPage(WebDriver webDriver) {
         super(webDriver);
     }
 }

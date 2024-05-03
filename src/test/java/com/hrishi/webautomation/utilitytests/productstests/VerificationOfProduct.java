@@ -7,7 +7,7 @@ import com.hrishi.webautomation.components.ZoomComponant;
 import com.hrishi.webautomation.data.clientdata.ProductDataClient;
 import com.hrishi.webautomation.models.ChoosedProduct;
 import com.hrishi.webautomation.pages.HomePage;
-import com.hrishi.webautomation.pages.ProductsPage;
+import com.hrishi.webautomation.pages.SProductsPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -25,7 +25,7 @@ public class VerificationOfProduct extends BaseTest {
         String name = productDataClient.getProduct().getName();
 
         //act
-        ProductsPage productsPage = searchModal.searchResult(searchContent.getInput());
+        SProductsPage productsPage = searchModal.searchResult(searchContent.getInput());
         WebElement productImage = getWebDriver().findElement(By.xpath("//*[@id=\"product-grid\"]/ul/li/div"));
         productImage.click();
 
@@ -49,7 +49,7 @@ public class VerificationOfProduct extends BaseTest {
         ProductDataClient productDataClient = new ProductDataClient();
 
         //act
-        ProductsPage productsPage = searchModal.searchResult(searchContent.getInput());
+        SProductsPage productsPage = searchModal.searchResult(searchContent.getInput());
         WebElement productImage = getWebDriver().findElement(By.xpath("//*[@id=\"product-grid\"]/ul/li/div"));
         productImage.click();
 

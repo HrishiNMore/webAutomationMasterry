@@ -8,7 +8,7 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class ProductsPage extends BasePage{
+public class SProductsPage extends BasePage{
 
     @FindBy(xpath = "//*[@id=\"shopify-section-template--15328405553373__main\"]/div/div[1]/h1")
     private WebElement searchHeadingEle;
@@ -29,7 +29,7 @@ public class ProductsPage extends BasePage{
     @FindBy(xpath = "//*[@id=\"product-grid\"]/div[2]/nav/ul/li[8]/a")
     private WebElement nextPageArrow;
 
-    public ProductsPage(WebDriver webDriver) {
+    public SProductsPage(WebDriver webDriver) {
         super(webDriver);
     }
 

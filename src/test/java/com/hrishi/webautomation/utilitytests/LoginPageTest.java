@@ -1,20 +1,10 @@
 package com.hrishi.webautomation.utilitytests;
 
 import com.hrishi.webautomation.BaseTest;
-import com.hrishi.webautomation.actions.SearchContent;
-import com.hrishi.webautomation.components.SearchModal;
-import com.hrishi.webautomation.components.ZoomComponant;
-import com.hrishi.webautomation.data.clientdata.ProductDataClient;
 import com.hrishi.webautomation.models.User;
 import com.hrishi.webautomation.pages.HomePage;
-import com.hrishi.webautomation.pages.ProductsPage;
-import com.hrishi.webautomation.pages.SerchPage;
 import com.hrishi.webautomation.pages.accounts.LoginPage;
 import com.hrishi.webautomation.pages.accounts.ProfilePage;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
