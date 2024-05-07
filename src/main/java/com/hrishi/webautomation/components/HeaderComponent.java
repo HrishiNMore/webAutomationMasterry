@@ -45,6 +45,9 @@ public class HeaderComponent extends BasePage {
     @FindBy(xpath = "//*[@id=\"CartItem-1\"]/td[2]/a")
     private WebElement cartTextEle;
 
+    @FindBy(xpath = "//*[@id=\"product-grid\"]/li[1]/div/div[1]/div/h3")
+    WebElement actext;
+
     public HeaderComponent(WebDriver webDriver) {
         super(webDriver);
         this.buttonActions=new ButtonAction(webDriver);
@@ -110,6 +113,10 @@ public class HeaderComponent extends BasePage {
     }
     public String navToTextCart(){
         return  webActions.getText(cartTextEle);
+    }
+
+    public String actext(){
+        return  webActions.getText(actext);
     }
 
 }

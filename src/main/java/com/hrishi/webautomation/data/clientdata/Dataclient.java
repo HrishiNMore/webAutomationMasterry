@@ -5,9 +5,9 @@ import com.hrishi.webautomation.data.mappers.JSONDataMapper;
 
 import java.util.Objects;
 
-public class dataclient {
+public class Dataclient {
     protected DataMapper dataMapper;
-    public dataclient() {
+    public Dataclient() {
         this.dataMapper=new JSONDataMapper();
     }
 

@@ -50,7 +50,16 @@ public class ViewProPage extends BasePage {
 
         return new cartmodal(webDriver);
     }
+    //*[@id="product-form-template--15328405717213__main"]/div/div/dynamic-checkout/div/shopify-buy-it-now-button/button
 
+    @FindBy(xpath = "//*[@id=\"product-form-template--15328405717213__main\"]/div/div/dynamic-checkout/div/shopify-buy-it-now-button/button")
+    private WebElement byProductBtn;
+
+    public cartmodal buyproduct(){
+        buttonActions.click(byProductBtn);
+
+        return new cartmodal(webDriver);
+    }
     public ViewProPage(WebDriver webDriver) {
         super(webDriver);
     }
