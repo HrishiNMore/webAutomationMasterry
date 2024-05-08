@@ -11,11 +11,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class cartmodal extends BasePage {
+public class Cartmodal extends BasePage {
     @FindBy(xpath = "//*[@id=\"cart-notification-button\"]")
     private WebElement viewMyCart;
 
-    public cartmodal(WebDriver webDriver) {
+    public Cartmodal(WebDriver webDriver) {
         super(webDriver);
     }
 

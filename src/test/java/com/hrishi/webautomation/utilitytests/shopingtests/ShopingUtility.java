@@ -1,13 +1,14 @@
 package com.hrishi.webautomation.utilitytests.shopingtests;
 
 import com.hrishi.webautomation.BaseTest;
-import com.hrishi.webautomation.Utility.ViewProducts;
+
 import com.hrishi.webautomation.actions.SearchContent;
 import com.hrishi.webautomation.components.SearchModal;
 import com.hrishi.webautomation.models.User;
 import com.hrishi.webautomation.pages.CartPage;
 import com.hrishi.webautomation.pages.HomePage;
 import com.hrishi.webautomation.pages.accounts.ViewProPage;
+import com.hrishi.webautomation.functions.ViewProduct;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -30,13 +31,14 @@ public class ShopingUtility extends BaseTest {
     }
 
     @Test
-    public void userIsAbleToAddProductAfterSearching()  {
+    public void userIsAbleToAddProductAfterSearching() throws InterruptedException {
         SearchContent searchContent= SearchContent.builder().build().init();
         HomePage homePage=new HomePage(getWebDriver());
         SearchModal searchModal = homePage.getHeader().openSearchModal();
         searchModal.searchResult(searchContent.getInput());
-        ViewProducts viewProduct=new ViewProducts(getWebDriver());
+        ViewProduct viewProduct=new ViewProduct(getWebDriver());
         ViewProPage viewProductPage = viewProduct.selectProduct();
+        Thread.sleep(5000);
         CartPage cartPage = viewProductPage.addToCart().viewMyCartClick();
         cartPage.printCartDetails();
         List<String> productNames = cartPage.getProductNames();
@@ -56,7 +58,7 @@ public class ShopingUtility extends BaseTest {
         homePage.getHeader().navToLoginPage().login(user);
         SearchModal searchModal = homePage.getHeader().openSearchModal();
         searchModal.searchResult(searchContent.getInput());
-        ViewProducts viewProduct = new ViewProducts(getWebDriver());
+        ViewProduct viewProduct = new ViewProduct(getWebDriver());
         ViewProPage viewProductPage = viewProduct.selectProduct();
         CartPage cartPage = viewProductPage.addToCart().viewMyCartClick();
         List<String> productNames = cartPage.getProductNames();
@@ -78,7 +80,7 @@ public class ShopingUtility extends BaseTest {
         HomePage homePage=new HomePage(getWebDriver());
         SearchModal searchModal = homePage.getHeader().openSearchModal();
         searchModal.searchResult(searchContent.getInput());
-        ViewProducts viewProduct=new ViewProducts(getWebDriver());
+        ViewProduct viewProduct=new ViewProduct(getWebDriver());
         ViewProPage viewProductPage = viewProduct.selectProduct();
         CartPage cartPage = viewProductPage.addToCart().viewMyCartClick();
 

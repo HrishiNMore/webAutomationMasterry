@@ -1,4 +1,4 @@
-package com.hrishi.webautomation.Utility;
+package com.hrishi.webautomation.functions;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

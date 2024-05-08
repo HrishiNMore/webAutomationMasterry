@@ -1,7 +1,7 @@
-package com.hrishi.webautomation.Utility;
+package com.hrishi.webautomation.functions;
 
 
-import com.hrishi.webautomation.models.cart;
+import com.hrishi.webautomation.models.Cart;
 import com.hrishi.webautomation.pages.CartPage;
 
 import java.util.List;
@@ -13,9 +13,9 @@ public class RemoveProductFromCart {
         this.cartPage = cartPage;
     }
     public void removeProductFromCart(String productName) {
-        List<cart> cartItems = cartPage.getDetails();
+        List<Cart> cartItems = cartPage.getDetails();
         for (int i = 0; i < cartItems.size(); i++) {
-            cart cartItem = cartItems.get(i);
+            Cart cartItem = cartItems.get(i);
             if (cartItem.getProductName().equals(productName)) {
                 cartItems.remove(i);
                 break;

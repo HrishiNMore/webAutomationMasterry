@@ -1,12 +1,15 @@
 package com.hrishi.webautomation.pages.accounts;
 
-import com.hrishi.webautomation.modals.cartmodal;
+import com.hrishi.webautomation.modals.Cartmodal;
 import com.hrishi.webautomation.pages.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.List;
 
 public class ViewProPage extends BasePage {
@@ -45,20 +48,21 @@ public class ViewProPage extends BasePage {
     @FindBy(xpath = "//*[@id=\"product-form-template--15328405717213__main\"]/div/button")
     private WebElement addToCartBtn;
 
-    public cartmodal addToCart(){
+    public Cartmodal addToCart(){
+        WebDriverWait webDriverWait=new WebDriverWait(webDriver, Duration.ofSeconds(10));
+        webDriverWait.until(ExpectedConditions.visibilityOf(addToCartBtn));
         buttonActions.click(addToCartBtn);
-
-        return new cartmodal(webDriver);
+        return new Cartmodal(webDriver);
     }
     //*[@id="product-form-template--15328405717213__main"]/div/div/dynamic-checkout/div/shopify-buy-it-now-button/button
 
     @FindBy(xpath = "//*[@id=\"product-form-template--15328405717213__main\"]/div/div/dynamic-checkout/div/shopify-buy-it-now-button/button")
     private WebElement byProductBtn;
 
-    public cartmodal buyproduct(){
+    public Cartmodal buyproduct(){
         buttonActions.click(byProductBtn);
 
-        return new cartmodal(webDriver);
+        return new Cartmodal(webDriver);
     }
     public ViewProPage(WebDriver webDriver) {
         super(webDriver);

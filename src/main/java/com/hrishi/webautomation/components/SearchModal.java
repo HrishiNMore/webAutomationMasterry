@@ -1,6 +1,6 @@
 package com.hrishi.webautomation.components;
 
-import com.hrishi.webautomation.pages.SProductsPage;
+import com.hrishi.webautomation.pages.SearchProductsPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -12,10 +12,10 @@ public class SearchModal extends HeaderComponent{
         super(webDriver);
     }
 
-    public SProductsPage searchResult(String input){
+    public SearchProductsPage searchResult(String input){
         textBox.type(inputBoxEle,input);
         inputBoxEle.submit();
-        return new SProductsPage(webDriver);
+        return new SearchProductsPage(webDriver);
     }
 
 }

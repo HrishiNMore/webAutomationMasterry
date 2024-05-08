@@ -1,16 +1,15 @@
-package com.hrishi.webautomation.Utility;
+package com.hrishi.webautomation.functions;
 
 import com.hrishi.webautomation.actions.SearchContent;
 import com.hrishi.webautomation.pages.BasePage;
 import com.hrishi.webautomation.pages.accounts.ViewProPage;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-public class ViewProducts extends BasePage {
+public class ViewProduct extends BasePage {
     @FindBy(id = "product-grid")
     private WebElement allProductsList;
 
@@ -28,7 +27,7 @@ public class ViewProducts extends BasePage {
         return new ViewProPage(webDriver);
     }
 
-    public ViewProducts(WebDriver webDriver) {
+    public ViewProduct(WebDriver webDriver) {
         super(webDriver);
     }
 }

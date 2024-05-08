@@ -22,7 +22,7 @@ public class SearchProductTest extends BaseTest {
 
         //arrange
         SearchModal searchModal = homePage.getHeader().openSearchModal();
-        SProductsPage productsPage = searchModal.searchResult(searchContent.getInput());
+        SearchProductsPage productsPage = searchModal.searchResult(searchContent.getInput());
 
         //assert
         Assert.assertTrue(productsPage.getHeading().contains("Search results"));
@@ -36,7 +36,7 @@ public class SearchProductTest extends BaseTest {
 
         //arrange
         SearchModal searchModal = homePage.getHeader().openSearchModal();
-        SProductsPage productsPage = searchModal.searchResult(searchContent.getInput());
+        SearchProductsPage productsPage = searchModal.searchResult(searchContent.getInput());
 
         //assert
         List<String> productNames = productsPage.getProductNames();
@@ -67,7 +67,7 @@ public class SearchProductTest extends BaseTest {
         SearchContent searchContent = SearchContent.builder().build().init();
         HomePage homePage = new HomePage(getWebDriver());
         SearchModal searchModal = homePage.getHeader().openSearchModal();
-        SProductsPage productsPage = searchModal.searchResult(searchContent.getInput());
+        SearchProductsPage productsPage = searchModal.searchResult(searchContent.getInput());
 
         ProductPage serchPage=homePage.getHeader().navTopicture();
 

@@ -2,12 +2,12 @@ package com.hrishi.webautomation.models;
 
 import lombok.Data;
 @Data
-public class cart {
+public class Cart {
     private String productName;
     private String size;
     private int quantity;
 
-    public cart(String productName, String sizeInfo) {
+    public Cart(String productName, String sizeInfo) {
         this.productName = productName;
         this.size = sizeInfo;
 //        this.quantity = Integer.parseInt(quantity);

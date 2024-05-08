@@ -1,4 +1,4 @@
-package com.hrishi.webautomation.Utility;
+package com.hrishi.webautomation.functions;
 
 import com.hrishi.webautomation.actions.WebActions;
 import org.openqa.selenium.WebDriver;

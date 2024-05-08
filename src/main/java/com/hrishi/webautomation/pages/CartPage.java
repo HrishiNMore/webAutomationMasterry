@@ -1,7 +1,7 @@
 package com.hrishi.webautomation.pages;
 
-import com.hrishi.webautomation.Utility.CartItemExtractor;
-import com.hrishi.webautomation.models.cart;
+import com.hrishi.webautomation.functions.CartItemExtractor;
+import com.hrishi.webautomation.models.Cart;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -24,33 +24,33 @@ public class CartPage extends BasePage{
 //        removeProductFromCart(    );
     }
     public void removeProductFromCart(String productName) {
-        List<cart> cartItems = getDetails();
+        List<Cart> cartItems = getDetails();
         for (int i = 0; i < cartItems.size(); i++) {
-            cart cartItem = cartItems.get(i);
+            Cart cartItem = cartItems.get(i);
             if (cartItem.getProductName().equals(productName)) {
                 cartItems.remove(i);
                 break;
             }
         }
     }
-    public List<cart> getDetails(){
+    public List<Cart> getDetails(){
         return cartItemExtractor.getCartDetails();
     }
 
     public List<String> getProductNames() {
-        List<cart> cartItems = cartItemExtractor.getCartDetails();
+        List<Cart> cartItems = cartItemExtractor.getCartDetails();
         List<String> productNames = new ArrayList<>();
-        for (cart cartItem : cartItems) {
+        for (Cart cartItem : cartItems) {
             productNames.add(cartItem.getProductName());
         }
         return productNames;
     }
 
     public void printCartDetails() {
-        List<cart> cartItems = cartItemExtractor.getCartDetails();
+        List<Cart> cartItems = cartItemExtractor.getCartDetails();
         System.out.println("Cart Details:");
         System.out.println("-------------");
-        for (cart cartItem : cartItems) {
+        for (Cart cartItem : cartItems) {
             System.out.println("Product Name: " + cartItem.getProductName());
             System.out.println("Size Info: " + cartItem.getSizeInfo());
             System.out.println("-------------");

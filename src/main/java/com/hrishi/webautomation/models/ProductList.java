@@ -1,4 +1,4 @@
-package com.hrishi.webautomation.modals;
+package com.hrishi.webautomation.models;
 
 import com.hrishi.webautomation.models.User;
 import com.hrishi.webautomation.pages.BasePage;

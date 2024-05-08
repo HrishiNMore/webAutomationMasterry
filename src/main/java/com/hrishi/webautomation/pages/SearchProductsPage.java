@@ -8,16 +8,19 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class SProductsPage extends BasePage{
+public class SearchProductsPage extends BasePage{
 
+   //search product icon
     @FindBy(xpath = "//*[@id=\"shopify-section-template--15328405553373__main\"]/div/div[1]/h1")
     private WebElement searchHeadingEle;
 
+    //product grid list
     @FindBy(xpath = "//*[@id=\"product-grid\"]/ul")
     private WebElement allProductsGridEle;
 
     private List<WebElement> productNameElements=allProductsGridEle.findElements(By.tagName("h3"));
 
+    //pagination
     @FindBy(xpath = "//*[@id=\"product-grid\"]/div[2]/nav/ul")
     private WebElement pagination;
 
@@ -29,7 +32,7 @@ public class SProductsPage extends BasePage{
     @FindBy(xpath = "//*[@id=\"product-grid\"]/div[2]/nav/ul/li[8]/a")
     private WebElement nextPageArrow;
 
-    public SProductsPage(WebDriver webDriver) {
+    public SearchProductsPage(WebDriver webDriver) {
         super(webDriver);
     }
 
