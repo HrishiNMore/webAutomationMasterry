@@ -49,10 +49,10 @@ public class User {
 
     public User userWithInvalidCredentials(){
         return User.builder()
-                .first_name("Om")
-                .last_name("Shinde")
-                .emailID("omshnde@gmail.com")
-                .password("OmShinde@1234")
+                .first_name("hrisshi")
+                .last_name("moore")
+                .emailID("hrishikeshmore1001@gmail.com")
+                .password("gvjvkvkv")
                 .build();
     }
 }

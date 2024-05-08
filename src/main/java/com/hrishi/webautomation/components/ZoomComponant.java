@@ -18,14 +18,15 @@ public class ZoomComponant extends WebActions {
         return productImage;
     }
 
-    public void zoomImageFunction(){
-        this.productImage=productImage;
-        originalWidth=productImage.getSize().getWidth();
-        originalHeight=productImage.getSize().getHeight();
+    public void zoomImageFunction() {
+        this.productImage = productImage;
+        originalWidth = productImage.getSize().getWidth();
+        originalHeight = productImage.getSize().getHeight();
         productImage.click();
-        zoomedWidth=productImage.getSize().getWidth();
-        zoomedHeight=productImage.getSize().getHeight();
+        zoomedWidth = productImage.getSize().getWidth();
+        zoomedHeight = productImage.getSize().getHeight();
     }
+
     public ZoomComponant(WebDriver webDriver) {
         super(webDriver);
         PageFactory.initElements(webDriver, this); // Initialize page elements

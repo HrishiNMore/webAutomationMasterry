@@ -12,19 +12,29 @@ import lombok.NoArgsConstructor;
 public class SearchContent {
     private String input;
 
-    public SearchContent init(){
+    public SearchContent init() {
         return SearchContent.builder()
                 .input("Dress")
                 .build();
     }
 
-    public SearchContent shoes(){
+    public SearchContent shoes() {
         return SearchContent.builder()
                 .input("Shoes")
                 .build();
     }
 
-    public String selectDress(){
+    public SearchContent jacket() {
+        return SearchContent.builder()
+                .input("Jacket")
+                .build();
+    }
+
+    public String selectJacket() {
+        return "Reasonable Jacket";
+    }
+
+    public String selectDress() {
         return "Sheer Dress";
     }
 

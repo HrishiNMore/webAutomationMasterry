@@ -35,7 +35,7 @@ public class ProductList extends BasePage {
 
     }
 
-    public String printGridItemsInStock(){
+    public String printGridItemsInStock() {
         User user = User.builder().build().userWithValidCredentials();
         HomePage homePage = new HomePage(this.webDriver);
         StorePage storePage = homePage.getHeader().navToStore();
@@ -53,7 +53,7 @@ public class ProductList extends BasePage {
         return text;
     }
 
-    public String printGridItemsOutofStock(){
+    public String printGridItemsOutofStock() {
         User user = User.builder().build().userWithValidCredentials();
         HomePage homePage = new HomePage(this.webDriver);
         StorePage storePage = homePage.getHeader().navToStore();
@@ -78,11 +78,11 @@ public class ProductList extends BasePage {
         StorePage avilPage = homePage.getHeader().navToAvil();
         WebElement chek = webDriver.findElement(By.xpath("//*[@id=\"FacetsWrapperDesktop\"]/details[1]/div/ul/li[1]/label"));
         chek.click();
-        WebElement pict=webDriver.findElement(By.xpath("//*[@id=\"product-grid\"]/li[1]/div/div[1]/div/h3/a"));
+        WebElement pict = webDriver.findElement(By.xpath("//*[@id=\"product-grid\"]/li[1]/div/div[1]/div/h3/a"));
         Actions actions = new Actions(webDriver);
         actions.doubleClick(pict).build().perform();
-        WebElement butt=webDriver.findElement(By.xpath("//*[@id=\"product-form-template--15328405717213__main\"]/div/button"));
-        text=butt.getText();
+        WebElement butt = webDriver.findElement(By.xpath("//*[@id=\"product-form-template--15328405717213__main\"]/div/button"));
+        text = butt.getText();
 
         return text;
 
@@ -96,18 +96,18 @@ public class ProductList extends BasePage {
         StorePage avilPage = homePage.getHeader().navToAvil();
         WebElement chek = webDriver.findElement(By.xpath("//*[@id=\"FacetsWrapperDesktop\"]/details[1]/div/ul/li[2]/label"));
         chek.click();
-        WebElement pict=webDriver.findElement(By.xpath("//*[@id=\"product-grid\"]/li[1]/div/div[1]/div/h3/a"));
+        WebElement pict = webDriver.findElement(By.xpath("//*[@id=\"product-grid\"]/li[1]/div/div[1]/div/h3/a"));
         Actions actions = new Actions(webDriver);
         actions.doubleClick(pict).build().perform();
-        WebElement butt=webDriver.findElement(By.xpath("//*[@id=\"product-form-template--15328405717213__main\"]/div/button"));
-        text=butt.getText();
+        WebElement butt = webDriver.findElement(By.xpath("//*[@id=\"product-form-template--15328405717213__main\"]/div/button"));
+        text = butt.getText();
 
         return text;
 
 
     }
 
-    public String printGridPrice(){
+    public String printGridPrice() {
         User user = User.builder().build().userWithValidCredentials();
         HomePage homePage = new HomePage(this.webDriver);
         StorePage storePage = homePage.getHeader().navToStore();
